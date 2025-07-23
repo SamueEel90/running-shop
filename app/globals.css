@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+font-size: 16px;
+
+
+}
+@theme {
+--color-white-smoke: #F5F5F5;
+--color-platinum: #E5E4E2;
+--color-silver: #C0C0C0;
+--color-powder-blue: #B0BDDB;
+--color-glaucous: #627CB8;
+--color-caribean: #317873;
+--color-caribean-light: #4AB8A1;
+--color-medium-gray: #414A4C;
+--color-dark-gray: #2A3439;
+
+}
+
+
+body {
+  background: var(--color-white-smoke);
+
+}
