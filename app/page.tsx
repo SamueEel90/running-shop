@@ -1,15 +1,15 @@
 import Image from 'next/image';
-
+import Link from 'next/link';
 export default function Home() {
   return (
-    <div className="w-full px-2 h-full ">
+    <div className="px-2 h-full w-10/12 mx-auto">
       <div
         className="
           grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2
           gap-4 mt-4 w-full
         "
       >
-        <div className="relative w-full">
+        <Link className="relative w-full" href="/category/horske">
           <Image
             className="w-full h-auto rounded-2xl"
             src="/images/MTB.jpg"
@@ -21,8 +21,8 @@ export default function Home() {
           <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
             Horské Bycikle
           </p>
-        </div>
-        <div className="relative w-full">
+        </Link>
+        <Link className="relative w-full" href="/category/cestne">
           <Image
             className="w-full h-auto rounded-2xl"
             src="/images/Road.jpg"
@@ -34,8 +34,8 @@ export default function Home() {
           <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
             Cestné Bycikle
           </p>
-        </div>
-        <div className="relative w-full">
+        </Link>
+        <Link className="relative w-full" href="/beh">
           <Image
             className="w-full h-auto rounded-2xl"
             src="/images/Run.jpg"
@@ -47,8 +47,8 @@ export default function Home() {
           <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl  rounded-2xl">
             Bežecké Topanky
           </p>
-        </div>
-        <div className="relative w-full">
+        </Link>
+        <Link className="relative w-full" href="/prislusenstvo">
           <Image
             className="w-full h-auto rounded-2xl"
             src="/images/100pr.jpg"
@@ -60,8 +60,8 @@ export default function Home() {
           <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
             Príslušenstvo
           </p>
-        </div>
-        <div className="relative w-full">
+        </Link>
+        <Link className="relative w-full" href="/komponenty">
           <Image
             className="w-full h-full rounded-2xl"
             src="/images/100pr.jpg"
@@ -73,8 +73,8 @@ export default function Home() {
           <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
             Komponenty
           </p>
-        </div>
-                <div className="relative w-full">
+        </Link>
+        <Link className="relative w-full" href="/vyziva">
           <Image
             className="w-full h-full rounded-2xl"
             src="/images/100pr.jpg"
@@ -86,7 +86,7 @@ export default function Home() {
           <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
             Vyživa
           </p>
-        </div>
+        </Link>
       </div>
     </div>
   );

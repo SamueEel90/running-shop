@@ -3,7 +3,7 @@ import { Anta } from "next/font/google";
 import "./globals.css";
 import Header from "./shared/Header/Header";
 import Footer from "./shared/Footer/Footer";
-
+import { CartProvider } from "../context/CartContext";
 
 const anta = Anta({
   variable: "--font-anta",
@@ -25,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={anta.variable}>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

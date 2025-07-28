@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const PortfolioLink: React.FC = () => {
   return (
-    <a
+    <Link
       href="https://portfolio-of-samuel.vercel.app/#projects"
       target="_blank"
       rel="noopener noreferrer"
       className="flex flex-col items-center space-x-2 group hover:underline transition"
     >
-      <div className="relative">
+      <div className="">
         <Image
           src="/images/Profilovka.jpg"
           alt="My Projects"
@@ -25,7 +26,7 @@ const PortfolioLink: React.FC = () => {
         </span>
         <span className="text-xs text-silver text-center">See my projects</span>
       </div>
-    </a>
+    </Link>
   );
 };
 
