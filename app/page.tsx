@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-export default function Home() {
+const Home = () => {
+
+  const imageClass = "w-full h-120 object-cover rounded-2xl"; 
+
   return (
-    <div className="px-2 h-full w-10/12 mx-auto">
+    <div className="px-2 py-6 h-full w-10/12 mx-auto">
       <div
         className="
           grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2
@@ -11,7 +14,7 @@ export default function Home() {
       >
         <Link className="relative w-full" href="/category/horske">
           <Image
-            className="w-full h-auto rounded-2xl"
+            className={imageClass}
             src="/images/MTB.jpg"
             alt="MTB"
             width={1920}
@@ -24,7 +27,7 @@ export default function Home() {
         </Link>
         <Link className="relative w-full" href="/category/cestne">
           <Image
-            className="w-full h-auto rounded-2xl"
+            className={imageClass}
             src="/images/Road.jpg"
             alt="Road"
             width={1920}
@@ -37,7 +40,7 @@ export default function Home() {
         </Link>
         <Link className="relative w-full" href="/beh">
           <Image
-            className="w-full h-auto rounded-2xl"
+            className={imageClass}
             src="/images/Run.jpg"
             alt="Run"
             width={1920}
@@ -50,7 +53,7 @@ export default function Home() {
         </Link>
         <Link className="relative w-full" href="/prislusenstvo">
           <Image
-            className="w-full h-auto rounded-2xl"
+            className={imageClass}
             src="/images/100pr.jpg"
             alt="100pr"
             width={1920}
@@ -61,11 +64,11 @@ export default function Home() {
             Príslušenstvo
           </p>
         </Link>
-        <Link className="relative w-full" href="/komponenty">
+        <Link className="relative w-full " href="/komponenty">
           <Image
-            className="w-full h-full rounded-2xl"
-            src="/images/100pr.jpg"
-            alt="100pr"
+            className={imageClass}
+            src="/images/crankset.jpg"
+            alt="Crankset"
             width={1920}
             height={1080}
             priority
@@ -76,9 +79,9 @@ export default function Home() {
         </Link>
         <Link className="relative w-full" href="/vyziva">
           <Image
-            className="w-full h-full rounded-2xl"
-            src="/images/100pr.jpg"
-            alt="100pr"
+            className={imageClass}
+            src="/images/sis2.jpeg"
+            alt="SIS"
             width={1920}
             height={1080}
             priority
@@ -90,4 +93,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

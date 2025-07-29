@@ -12,6 +12,7 @@ export type CartItem = {
 
 interface CartContextType {
   cart: CartItem[];
+  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>; // <-- add this line
   addToCart: (item: Omit<CartItem, "quantity">, quantity: number) => void;
   setQuantity: (productId: string, quantity: number) => void;
   removeFromCart: (productId: string) => void;
@@ -24,14 +25,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [cart, setCart] = useState<CartItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
-  // Hydrate cart from localStorage on mount (client only)
   useEffect(() => {
     const saved = localStorage.getItem("cart");
     if (saved) setCart(JSON.parse(saved));
     setHydrated(true);
   }, []);
 
-  // Save cart to localStorage on change
   useEffect(() => {
     if (hydrated) {
       localStorage.setItem("cart", JSON.stringify(cart));
@@ -70,11 +69,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const getQuantity = (productId: string) =>
     cart.find(item => item.productId === productId)?.quantity || 1;
 
-  // Optionally delay context until hydrated to avoid mismatch in deep consumers
   if (!hydrated) return null;
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, setQuantity, removeFromCart, getQuantity }}>
+    <CartContext.Provider
+      value={{ cart, setCart, addToCart, setQuantity, removeFromCart, getQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );

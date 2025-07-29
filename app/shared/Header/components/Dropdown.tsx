@@ -11,7 +11,7 @@ export default function Dropdown({ item }: Props) {
 
   return (
     <div className="relative group">
-      <Link href={item.route || '#'} className="hover:text-blue-400 text-white-smoke px-2 py-1">
+      <Link href={item.route || '#'} className="hover:text-caribean-light text-white-smoke px-2 py-1">
         {item.title}
       </Link>
 
@@ -23,7 +23,7 @@ export default function Dropdown({ item }: Props) {
           {menuItems.map(child => (
             <Link
               key={child.route}
-              className=" hover:text-dark-gray px-4 py-1"
+              className=" hover:text-caribean-light px-4 py-1"
               href={child?.route || ''}
             >
               {child.title}

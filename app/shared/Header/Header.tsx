@@ -1,19 +1,16 @@
 import React from 'react';
 import Logo from './components/Logo';
 import PortfolioLink from './components/PortfolioLink';
-import Link from 'next/link';
-
-import Dropdown from './components/Dropdown'; 
-
+import Dropdown from './components/Dropdown';
 import menuItems from './data/menuItems';
 import CartLink from './components/CartLink';
 import SearchInput from './components/SearchInput';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <div className="shadow-lg">
       <div className="justify-center items-center bg-gradient-to-r from-caribean to-caribean-light h-14 flex">
-        <div className='flex justify-center items-center md:hidden'>
+        <div className="flex justify-center items-center md:hidden">
           <Logo />
         </div>
         <ul className="hidden md:flex space-x-30 text-white font-light tracking-wide">
@@ -25,14 +22,14 @@ const Header = () => {
       </div>
 
       <div className="flex items-center bg-dark-gray w-full shadow-md h-20">
-        <div className="w-24 justify-start hidden md:flex ">
+        <div className="w-24 justify-start hidden md:flex">
           <Logo />
         </div>
         <div className="flex-1 flex justify-center">
           <SearchInput />
         </div>
         <CartLink />
-        <div className="flex-shrink-0 w-32 hidden md:flex ">
+        <div className="flex-shrink-0 w-32 hidden md:flex">
           <PortfolioLink />
         </div>
       </div>
@@ -40,7 +37,7 @@ const Header = () => {
       <div className="flex justify-center items-center bg-medium-gray px-6 py-2 shadow">
         <ul className="flex space-x-6">
           {menuItems.map((item) => (
-            <li key={item.title}>
+            <li key={item.title} className="font-semibold text-white hover:text-caribean transition">
               <Dropdown item={item} />
             </li>
           ))}

@@ -2,6 +2,7 @@
 import React from "react";
 import { useCart } from "../../../context/CartContext";
 import QuantitySelector from "../../product/[id]/components/QuantitySelector";
+import Link from "next/link";
 
 const Cart: React.FC = () => {
   const { cart, setQuantity, removeFromCart } = useCart();
@@ -51,12 +52,14 @@ const Cart: React.FC = () => {
         <span className="text-dark-gray font-bold text-lg">Total:</span>
         <span className="text-glaucous font-bold text-lg">${total.toFixed(2)}</span>
       </div>
-      <button
-        className="mt-8 w-full bg-caribean text-white-smoke font-bold py-3 rounded-xl transition hover:bg-caribean-light disabled:opacity-50"
-        disabled={cart.length === 0}
-      >
-        Proceed to Checkout
-      </button>
+      <Link href="/checkout">
+        <button
+          className="mt-8 w-full bg-caribean text-white-smoke font-bold py-3 rounded-xl transition hover:bg-caribean-light disabled:opacity-50"
+          disabled={cart.length === 0}
+        >
+          Proceed to Checkout
+        </button>
+      </Link>
     </div>
   );
 };
