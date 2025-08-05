@@ -1,7 +1,7 @@
 import clientPromise from "../../lib/mongodb"; // your MongoDB connection util
 import Image from "next/image";
-import ProductCard from "./components/ProductCard";
-import CategoryPresentation from "./components/CategoryPresentation"; // Assuming you have a component for category presentation
+import ProductCard from "../shared/components/ProductCard";
+import CategoryPresentation from "../shared/components/CategoryPresentation"; // Assuming you have a component for category presentation
 interface Props {
   params: { category: string }
 }

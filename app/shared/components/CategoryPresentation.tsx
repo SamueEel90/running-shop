@@ -41,6 +41,12 @@ const presentations = [
     description:
       "Cestné bežecké topánky sú navrhnuté pre maximálny komfort a efektivitu na tvrdých povrchoch. Ideálne pre rýchle tréningy a preteky na ceste.",
   },
+    {
+      key: "bazar",
+      title: "Bazar",
+      subtitle: "Kvalitné produkty za výhodné ceny",
+      description: "V našom bazáre nájdete široký výber použitých a zľavnených produktov, ktoré sú stále v skvelom stave. Ušetrite peniaze a nájdite kvalitné vybavenie pre vaše športové aktivity."
+    }
 ];
 
 const CategoryPresentation: React.FC<{ category: string }> = ({ category }) => {

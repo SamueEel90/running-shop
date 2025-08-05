@@ -47,7 +47,7 @@ const menuItems: MenuItem[] = [
     children: [
       { title: 'Pitný režim', route: '/vyzyva/napoje' },
       { title: 'Energetické gély', route: '/vyzyva/gely' },
-      { title: 'Proti kŕčom', route: '/vyzyva/proteiny' },
+      { title: 'Proti kŕčom', route: '/vyzyva/magnezium' },
       { title: 'Regenerácia', route: '/vyzyva/regeneracia' }
     ]
   },

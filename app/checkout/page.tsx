@@ -9,6 +9,7 @@ export default function CheckoutPage() {
     name: "",
     email: "",
     address: "",
+    phone: "",
   });
   const [orderPlaced, setOrderPlaced] = useState(false);
 
@@ -20,19 +21,19 @@ export default function CheckoutPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setTimeout(() => {
       setOrderPlaced(true);
-      setCart([]); 
+      setCart([]);
     }, 800);
   };
 
   if (orderPlaced) {
     return (
-      <div className="max-w-lg mx-auto mt-10 bg-white rounded-2xl shadow-lg p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Thank you for your order!</h2>
-        <p className="mb-6">Your order has been received and is being processed.</p>
-        <Link href="/" className="text-caribean font-semibold hover:underline">
+      <div className="max-w-lg mx-auto mt-10 rounded-2xl shadow-xl p-8 text-center bg-white-smoke border border-platinum">
+        <h2 className="text-2xl font-extrabold mb-4 text-caribean">Thank you for your order!</h2>
+        <p className="mb-6 text-medium-gray">Your order has been received and is being processed.</p>
+        <Link href="/" className="inline-block px-6 py-2 rounded-lg bg-caribean-light text-white font-semibold shadow hover:bg-caribean hover:shadow-lg transition">
           Back to Home
         </Link>
       </div>
@@ -40,25 +41,30 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="max-w-lg mx-auto mt-10 bg-white rounded-2xl shadow-lg p-8">
-      <h2 className="text-2xl font-bold mb-6">Checkout</h2>
+    <div className="max-w-lg mx-auto mt-10 rounded-2xl shadow-xl p-8 bg-white-smoke border border-platinum">
+      <h2 className="text-3xl font-extrabold mb-6 text-caribean-light text-center tracking-wide">Checkout</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty. <Link href="/" className="text-caribean hover:underline">Go shopping?</Link></p>
+        <p className="text-medium-gray text-center">
+          Your cart is empty.{" "}
+          <Link href="/" className="text-caribean hover:underline font-semibold">
+            Go shopping?
+          </Link>
+        </p>
       ) : (
         <>
-          <div className="mb-6">
-            <h3 className="font-semibold mb-2">Order Summary</h3>
+          <div className="mb-6 rounded-xl p-4 shadow border border-silver">
+            <h3 className="font-semibold text-xl mb-3 text-caribean text-center tracking-wide">Order Summary</h3>
             <ul>
               {cart.map((item) => (
-                <li key={item.productId} className="flex justify-between py-1">
+                <li key={item.productId} className="flex justify-between py-1 text-dark-gray">
                   <span>
-                    {item.title} x {item.quantity}
+                    {item.title} <span className="text-caribean-light">x {item.quantity}</span>
                   </span>
-                  <span className="font-semibold">${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="font-bold">${(item.price * item.quantity).toFixed(2)}</span>
                 </li>
               ))}
             </ul>
-            <div className="flex justify-between mt-4 border-t pt-2 font-bold">
+            <div className="flex justify-between mt-4 border-t border-silver pt-2 font-bold text-caribean text-lg">
               <span>Total:</span>
               <span>${total.toFixed(2)}</span>
             </div>
@@ -71,7 +77,7 @@ export default function CheckoutPage() {
               value={customer.name}
               onChange={handleChange}
               required
-              className="border rounded-lg px-4 py-2"
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
             />
             <input
               type="email"
@@ -80,7 +86,16 @@ export default function CheckoutPage() {
               value={customer.email}
               onChange={handleChange}
               required
-              className="border rounded-lg px-4 py-2"
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
+            />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number"
+              value={customer.phone}
+              onChange={handleChange}
+              required
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
             />
             <textarea
               name="address"
@@ -88,12 +103,12 @@ export default function CheckoutPage() {
               value={customer.address}
               onChange={handleChange}
               required
-              className="border rounded-lg px-4 py-2"
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
               rows={3}
             />
             <button
               type="submit"
-              className="bg-caribean text-white font-bold py-3 rounded-xl transition hover:bg-caribean-light disabled:opacity-50"
+              className="bg-caribean hover:bg-caribean-light text-white font-bold py-3 rounded-xl shadow transition disabled:opacity-50"
               disabled={cart.length === 0}
             >
               Place Order

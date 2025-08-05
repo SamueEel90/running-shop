@@ -1,31 +1,17 @@
 'use client';
-import Image from "next/image";
 import { useState } from "react";
-import AddToCartButton from "../../../shared/components/AddToCartButton";
-import QuantitySelector from "../../../shared/components/QuantitySelector";
-interface Product {
-  _id: string;
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  rating: number;
-  stock: number;
-}
+import AddToCartButton from "../../shared/components/AddToCartButton";
+import QuantitySelector from "../../shared/components/QuantitySelector";
 
-const ProductPageCard: React.FC<{ product: Product }> = ({ product }) => {
-  const images = product.image ? [product.image] : [];
-  const [mainImage, setMainImage] = useState(images[0]);
+
+
+const BazarPageCard = ({ product }: { product: any }) => {
+ 
   const [count, setCount] = useState(1);
   const [wishlisted, setWishlisted] = useState(false);
 
-  const handleDecrease = () => {
-    setCount(prev => Math.max(1, prev - 1));
-  };
-  const handleIncrease = () => {
-    setCount(prev => Math.min(product.stock, prev + 1));
-  };
-
+  const handleDecrease = () => setCount(prev => Math.max(1, prev - 1));
+  const handleIncrease = () => setCount(prev => Math.min(product.stock, prev + 1));
   const handleWishlist = () => {
     setWishlisted(prev => !prev);
     alert(
@@ -37,36 +23,17 @@ const ProductPageCard: React.FC<{ product: Product }> = ({ product }) => {
     <div className="container mx-auto p-6 max-w-8xl min-h-[700px] bg-white shadow rounded-lg mt-8 flex items-center">
       <div className="flex flex-col md:flex-row gap-8 w-full h-full">
         <div className="md:w-1/2 flex flex-col items-center justify-center">
-          <Image
-            src={mainImage}
+          <img
+            src={product.image}
             alt={product.title}
             width={600}
             height={450}
             className="object-cover rounded-lg shadow w-full max-w-2xl h-auto"
-            priority
           />
-          <div className="flex gap-4 mt-4">
-            {images.map((imgSrc, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setMainImage(imgSrc)}
-                className={`border-2 rounded-lg overflow-hidden focus:outline-none ${mainImage === imgSrc ? 'border-caribean' : 'border-gray-300'}`}
-              >
-                <Image
-                  src={imgSrc}
-                  alt={`Thumbnail ${idx + 1}`}
-                  width={80}
-                  height={60}
-                  className="object-cover"
-                />
-              </button>
-            ))}
-          </div>
         </div>
         <div className="md:w-1/2 flex flex-col justify-between h-full py-8">
           <h1 className="text-4xl text-caribean font-bold mb-4">{product.title}</h1>
-          <p className="text-md text-glaucous mb-4">{product.description}</p>
+          <p className="text-lg  text-glaucous mb-4 ">{product.description}</p>
           <div className="flex items-center gap-2 mb-4">
             <span className="text-2xl">
               {'★'.repeat(Math.round(product.rating))}
@@ -83,13 +50,7 @@ const ProductPageCard: React.FC<{ product: Product }> = ({ product }) => {
             {product.stock > 0 ? `In stock: ${product.stock}` : "Out of stock"}
           </div>
           <div className="flex items-center gap-4 mt-4 w-full">
-            <QuantitySelector
-              value={count}
-              min={1}
-              max={product.stock}
-              onDecrease={handleDecrease}
-              onIncrease={handleIncrease}
-            />
+            <QuantitySelector value={count} min={1} max={product.stock} onDecrease={handleDecrease} onIncrease={handleIncrease} />
             <AddToCartButton product={product} quantity={count} />
             <button
               type="button"
@@ -110,4 +71,4 @@ const ProductPageCard: React.FC<{ product: Product }> = ({ product }) => {
   );
 };
 
-export default ProductPageCard;
+export default BazarPageCard;

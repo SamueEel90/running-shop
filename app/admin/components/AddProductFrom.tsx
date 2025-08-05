@@ -1,14 +1,16 @@
 'use client';
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
-interface AddToBazarFormProps {}
+interface AddProductFormProps {}
 
-const AddToBazarForm: React.FC<AddToBazarFormProps> = () => {
+const AddProductForm: React.FC<AddProductFormProps> = () => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [price, setPrice] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [subcategory, setSubcategory] = useState<string>("");
+  const [rating, setRating] = useState<string>("");
+  const [stock, setStock] = useState<string>("");
   const [image, setImage] = useState<File | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<string | null>(null);
@@ -26,7 +28,7 @@ const AddToBazarForm: React.FC<AddToBazarFormProps> = () => {
     setError(null);
 
     // Validate all required fields
-    if (!title || !description || !price || !category || !subcategory) {
+    if (!title || !description || !price || !category || !subcategory || !rating || !stock) {
       setError("All fields are required.");
       return;
     }
@@ -45,9 +47,11 @@ const AddToBazarForm: React.FC<AddToBazarFormProps> = () => {
       formData.append("price", price);
       formData.append("category", category);
       formData.append("subcategory", subcategory);
+      formData.append("rating", rating);
+      formData.append("stock", stock);
       formData.append("image", image);
 
-      const res = await fetch("/api/bazaar/add", {
+      const res = await fetch("/api/products/add", {
         method: "POST",
         body: formData,
       });
@@ -61,6 +65,8 @@ const AddToBazarForm: React.FC<AddToBazarFormProps> = () => {
         setPrice("");
         setCategory("");
         setSubcategory("");
+        setRating("");
+        setStock("");
         setImage(null);
       } else {
         setError(data.error || "Failed to add product.");
@@ -155,6 +161,39 @@ const AddToBazarForm: React.FC<AddToBazarFormProps> = () => {
         />
       </div>
       <div>
+        <label className="block text-gray-700 font-medium mb-2" htmlFor="rating">
+          Rating
+        </label>
+        <input
+          type="number"
+          id="rating"
+          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="e.g. 4.5"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+          min={0}
+          max={5}
+          step="0.1"
+          required
+        />
+      </div>
+      <div>
+        <label className="block text-gray-700 font-medium mb-2" htmlFor="stock">
+          Stock
+        </label>
+        <input
+          type="number"
+          id="stock"
+          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="e.g. 10"
+          value={stock}
+          onChange={(e) => setStock(e.target.value)}
+          min={0}
+          step="1"
+          required
+        />
+      </div>
+      <div>
         <label className="block text-gray-700 font-medium mb-2" htmlFor="image">
           Image
         </label>
@@ -186,4 +225,4 @@ const AddToBazarForm: React.FC<AddToBazarFormProps> = () => {
   );
 };
 
-export default AddToBazarForm;
+export default AddProductForm;

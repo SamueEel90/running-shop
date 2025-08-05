@@ -1,4 +1,4 @@
-import { useCart } from "../../../../context/CartContext";
+import { useCart } from "../../../context/CartContext";
 
 type Product = {
   _id: string;
@@ -33,7 +33,7 @@ const AddToCartButton = ({ product, quantity }: AddToCartButtonProps) => {
         // Optionally show a toast/notification instead of alert!
         alert(`Added ${quantity} × ${product.title} to cart`);
       }}
-      className="bg-caribean hover:bg-caribean-light text-white rounded-md px-6 py-3 font-semibold text-lg transition-colors w-80"
+      className="bg-caribean hover:bg-caribean-light text-white rounded-md px-6 py-3 font-semibold text-lg transition-colors w-40"
       disabled={product.stock === 0}
     >
       Add to Cart

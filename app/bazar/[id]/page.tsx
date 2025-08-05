@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
-import ProductPageCard from './components/ProductPageCard';
+import BazarPageCard from "../components/BazarPageCard";
 
 interface Props {
   params: {
@@ -21,7 +21,7 @@ export default async function ProductPage({ params }: Props) {
   const { id } = await params;
   const client = await clientPromise;
   const db = client.db("RunningShopDB");
-  const product = await db.collection("products").findOne({ _id: new ObjectId(id) });
+  const product = await db.collection("bazaarProducts").findOne({ _id: new ObjectId(id) });
 
   if (!product) {
     return (
@@ -36,10 +36,10 @@ export default async function ProductPage({ params }: Props) {
     title: product.title ?? "",
     description: product.description ?? "",
     price: product.price ?? 0,
-    image: product.image ?? "",
+    image: product.image ,
     rating: product.rating ?? 0,
-    stock: product.stock ?? 0,
+    stock: product.stock ?? 1,
   };
 
-  return <ProductPageCard product={plainProduct} />;
+  return <BazarPageCard product={plainProduct} />;
 }

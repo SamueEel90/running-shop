@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
 import { useCart } from "../../../context/CartContext";
-import QuantitySelector from "../../product/[id]/components/QuantitySelector";
+import QuantitySelector from "../../shared/components/QuantitySelector";
 import Link from "next/link";
 
 const Cart: React.FC = () => {
