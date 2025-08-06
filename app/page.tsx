@@ -21,7 +21,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
+          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Horské Bycikle
           </p>
         </Link>
@@ -34,7 +34,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
+          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Cestné Bycikle
           </p>
         </Link>
@@ -47,7 +47,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl  rounded-2xl">
+          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Bežecké Topanky
           </p>
         </Link>
@@ -60,7 +60,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
+          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Príslušenstvo
           </p>
         </Link>
@@ -73,7 +73,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
+          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Komponenty
           </p>
         </Link>
@@ -86,7 +86,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-light text-white text-6xl rounded-2xl">
+          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Vyživa
           </p>
         </Link>

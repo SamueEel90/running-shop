@@ -6,7 +6,7 @@ const AdminPage = () => {
       <h1>Admin Dashboard</h1>
       <p>Welcome to the admin dashboard.</p>
       <AddProductForm />
-      {/* Other admin components can be added here */}
+     
     </div>
   );
 };

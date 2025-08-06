@@ -83,9 +83,7 @@ const AddProductForm: React.FC<AddProductFormProps> = () => {
       className="max-w-xl mx-auto bg-white shadow-md rounded-lg p-8 space-y-6"
       onSubmit={handleSubmit}
     >
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">
-        Please tell people about your product
-      </h2>
+   
       {success && <div className="text-green-600">{success}</div>}
       {error && <div className="text-red-600">{error}</div>}
       <div>

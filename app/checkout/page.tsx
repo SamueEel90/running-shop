@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CheckoutPage() {
   const { cart, setCart } = useCart();
@@ -58,6 +59,7 @@ export default function CheckoutPage() {
               {cart.map((item) => (
                 <li key={item.productId} className="flex justify-between py-1 text-dark-gray">
                   <span>
+                    <Image src={item.image} alt={item.title} width={50} height={50} className="inline-block mr-2" />
                     {item.title} <span className="text-caribean-light">x {item.quantity}</span>
                   </span>
                   <span className="font-bold">${(item.price * item.quantity).toFixed(2)}</span>
@@ -77,7 +79,7 @@ export default function CheckoutPage() {
               value={customer.name}
               onChange={handleChange}
               required
-              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-dark-gray focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
             />
             <input
               type="email"
@@ -86,7 +88,7 @@ export default function CheckoutPage() {
               value={customer.email}
               onChange={handleChange}
               required
-              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-dark-gray focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
             />
             <input
               type="text"
@@ -95,17 +97,26 @@ export default function CheckoutPage() {
               value={customer.phone}
               onChange={handleChange}
               required
-              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-dark-gray focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
             />
             <textarea
               name="address"
-              placeholder="Shipping Address"
+              placeholder="Shipping Address first line"
               value={customer.address}
               onChange={handleChange}
               required
-              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-silver focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-dark-gray focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
               rows={3}
             />
+            <textarea
+              name="address"
+              placeholder="Shipping Address second line (optional)"
+              value={customer.address}
+              onChange={handleChange}
+              className="border border-silver rounded-lg px-4 py-2 bg-white-smoke text-dark-gray placeholder-dark-gray focus:border-caribean-light focus:ring-2 focus:ring-caribean-light transition"
+              rows={3}
+            />
+            
             <button
               type="submit"
               className="bg-caribean hover:bg-caribean-light text-white font-bold py-3 rounded-xl shadow transition disabled:opacity-50"

@@ -4,8 +4,7 @@ import PortfolioLink from './components/PortfolioLink';
 import Dropdown from './components/Dropdown';
 import menuItems from './data/menuItems';
 import CartLink from './components/CartLink';
-import SearchInput from './components/SearchInput';
-
+import SearchDropdown from './components/SearchDropdown';
 const Header: React.FC = () => {
   return (
     <div className="shadow-lg">
@@ -26,11 +25,12 @@ const Header: React.FC = () => {
           <Logo />
         </div>
         <div className="flex-1 flex justify-center">
-          <SearchInput />
+          
+          <SearchDropdown />
         </div>
         <CartLink />
         <div className="flex-shrink-0 w-32 hidden md:flex">
-          <PortfolioLink />
+          {/* <PortfolioLink /> */}
         </div>
       </div>
 

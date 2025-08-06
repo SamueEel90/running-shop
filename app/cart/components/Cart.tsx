@@ -18,7 +18,7 @@ const Cart: React.FC = () => {
             className="grid grid-cols-[80px_1fr_auto_auto] items-center gap-4 py-6"
           >
             <img
-              src={'/fake-data/placeholderShoe.jpg'}
+              src={item.image}
               alt={item.title}
               className="w-80 h-20 rounded-lg object-cover border-silver"
             />
