@@ -26,15 +26,15 @@ const Header: React.FC = () => {
   </div>
 
   {/* Search Section */}
-  <div className="flex-1 mx-4">
+  <div className=" flex mx-4">
     <SearchDropdown />
   </div>
 
   {/* Navigation Links */}
-  <div className="hidden lg:flex gap-2 text-white text-md font-semibold h-full py-4">
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm' href="/support">Pomoc</Link>
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm' href="/sale">Vypredaj</Link>
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm' href="/profile">
+  <div className="hidden lg:flex text-white text-md  h-full py-4">
+    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/support">Pomoc</Link>
+    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/sale">Vypredaj</Link>
+    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/profile">
       <svg
       xmlns="http://www.w3.org/2000/svg"
       width={22}
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
       <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
       </svg>
     </Link>
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm' href="/about">O nás</Link>
+    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/about">O nás</Link>
   </div>
 
   {/* Cart Section */}
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
 </div>
 
 
-      <div className="flex  items-center bg-medium-gray shadow">
+      <div className="flex items-center bg-medium-gray shadow">
         <ul className="flex  text-lg">
           {menuItems.map((item) => (
             <div key={item.title}  className=' hover:bg-dark-gray transition rounded-sm'>

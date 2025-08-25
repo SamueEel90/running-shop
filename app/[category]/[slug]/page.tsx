@@ -1,6 +1,6 @@
 import clientPromise from "../../../lib/mongodb"; 
 import Image from "next/image";
-import ProductCard from "../../shared/components/ProductCard";
+import ProductCard from "../../shared/cards/ProductCard";
 import CategoryPresentation from "../../shared/components/CategoryPresentation";
 interface Props {
   params: { slug: string }

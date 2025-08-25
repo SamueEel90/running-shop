@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import AddToCartButton from './AddToCartButton';
+import AddToCartButton from '../components/AddToCartButton';
 
 const ProductCard: React.FC<{ product: any }> = ({ product }) => {
   return (

@@ -6,7 +6,7 @@ const Logo:React.FC = () => {
         alt="Logo"
         className="h-16 w-16 object-cover"
       />
-      <span className="text-3xl font-bold md:text-caribean-light text-dark-gray">Mythic Miles</span>
+      <span className="text-3xl font-bold md:text-caribean-light text-white">Mythic Miles</span>
     </a> 
   );
 }

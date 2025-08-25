@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 
-const page = () => {
+const ProfilePage = () => {
   return (
     <div>page</div>
    
   )
 }
+export default ProfilePage
