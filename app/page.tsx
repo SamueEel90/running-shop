@@ -8,7 +8,7 @@ const Home = () => {
     <div className="px-2 py-6 h-full w-10/12 mx-auto">
       <div
         className="
-          grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2
+          grid grid-cols-1  lg:grid-cols-2
           gap-4 mt-4 w-full
         "
       >
@@ -47,7 +47,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
+          <p className="absolute inset-0 flex items-center justify-center lg:font-medium font-small shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Bežecké Topanky
           </p>
         </Link>
@@ -60,7 +60,7 @@ const Home = () => {
             height={1080}
             priority
           />
-          <p className="absolute inset-0 flex items-center justify-center font-medium shadow-md text-white text-7xl rounded-2xl text-stroke-black">
+          <p className="absolute inset-0 flex items-center justify-center lg:font-medium font-small shadow-md text-white text-7xl rounded-2xl text-stroke-black">
             Príslušenstvo
           </p>
         </Link>

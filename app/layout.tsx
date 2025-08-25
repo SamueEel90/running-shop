@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Anta } from "next/font/google";
 import "./globals.css";
-import Header from "./shared/Header/Header";
-import Footer from "./shared/Footer/Footer";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 import { CartProvider } from "../context/CartContext";
 
 const anta = Anta({
@@ -28,9 +28,9 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           {children}
-          <Footer />
+        <Footer />
         </CartProvider>
-      </body>
+      </body>  
     </html>
   );
 }

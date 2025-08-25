@@ -31,8 +31,8 @@ const SearchDropdown = () => {
   const handleCardClick = () => setSearchTerm("");
 
   return (
-    <div className="absolute top-19 z-10 w-full max-w-xs">
-      <div className="w-full max-w-xs">
+    <div className="flex justify-center">
+      <div className="">
         <input
           type="text"
           placeholder="Hľadať..."
