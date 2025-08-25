@@ -1,12 +1,12 @@
-import { title } from "process";
 
-export type MenuItem = {
+
+export type TMenuItem = {
   title: string;
   route?: string;
-  children?: MenuItem[];
+  children?: TMenuItem[];
 };
 
-const menuItems: MenuItem[] = [
+const menuItems: TMenuItem[] = [
   {
     title: 'Cyklistika',
     route: '/cyklistika',

@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { MenuItem } from '../data/menuItems';
+import { TMenuItem } from '../data/menuItems';
 
 interface Props {
-  item: MenuItem;
+  item: TMenuItem;
 }
 
 export default function Dropdown({ item }: Props) {

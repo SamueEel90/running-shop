@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './components/Logo';
-import Dropdown from './components/Dropdown';
+import Dropdown from './components/NavigationDropdown';
+import secondaryMenuItems from './data/secondaryMenuItems';
 import menuItems from './data/menuItems';
 import CartLink from './components/CartLink';
 import SearchDropdown from './components/SearchDropdown';
@@ -31,11 +32,19 @@ const Header: React.FC = () => {
   </div>
 
   {/* Navigation Links */}
-  <div className="hidden lg:flex text-white text-md  h-full py-4">
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/support">Pomoc</Link>
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/sale">Vypredaj</Link>
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/profile">
-      <svg
+ <div className="hidden lg:flex text-white text-md h-full py-4">
+  {secondaryMenuItems.map((item) => (
+    <div key={item.title} className="flex items-center hover:bg-medium-gray transition rounded-sm px-2">
+      <Dropdown item={item} />
+    </div>
+  ))}
+
+  {/* Profile icon stays separate */}
+  <Link
+    href="/profile"
+    className="flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-6"
+  >
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       width={22}
       height={22}
@@ -46,13 +55,13 @@ const Header: React.FC = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
       className="inline-block align-middle"
-      >
+    >
       <circle cx="12" cy="8" r="4" />
       <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
-      </svg>
-    </Link>
-    <Link className='flex justify-center items-center hover:bg-medium-gray transition rounded-sm px-8' href="/about">O nás</Link>
-  </div>
+    </svg>
+  </Link>
+</div>
+
 
   {/* Cart Section */}
   <div className="ml-4">
